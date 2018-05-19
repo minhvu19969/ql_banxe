@@ -1,0 +1,97 @@
+CREATE TABLE HangSX
+(
+	MaHang varchar(10) NOT NULL,
+	TenHang nvarchar(100),
+	DiaChi nvarchar(150),
+	SDT varchar(11),
+	CONSTRAINT PK_HangSX PRIMARY KEY(MaHang)
+)
+CREATE TABLE LoaiXe
+(
+	MaLoaiXe varchar(10) NOT NULL,
+	TenLoaiXe nvarchar(100),
+	MaHang varchar(10) NOT NULL,
+	NamSX float,
+	CONSTRAINT PK_LoaiXe PRIMARY KEY(MaLoaiXe),
+	CONSTRAINT FK_LoaiXe_HangSX FOREIGN KEY(MaHang) REFERENCES HangSX(MaHang)
+)
+CREATE TABLE Xe
+(
+	MaXe varchar(10)NOT NULL,
+	TenXe nvarchar(100),
+	MaLoaiXe varchar(10) NOT NULL,
+	PhanKhoi nvarchar(20),
+	GiaTien money,
+	CONSTRAINT PK_Xe PRIMARY KEY(MaXe),
+	CONSTRAIN FK_Xe_LoaiXe FOREIGN KEY(MaLoaiXe) REFERENCES LoaiXe(MaLoaiXe)
+)
+CREATE TABLE NhanVien
+(
+	MaNV varchar(10) NOT NULL,
+	TenNV nvarchar(100),
+	DiaChi nvarchar(150),
+	SDT varchar(11),
+	Luong money,
+	MatKhau varchar(20),
+	CONSTRAINT PK_NhanVien PRIMARY KEY(MaNV)
+)
+CREATE TABLE KhachHang
+(
+	MaKH varchar(10) NOT NULL,
+	TenKH nvarchar(100),
+	DiaChi nvarchar(150),
+	SDT varchar(11),
+	CONSTRAINT PK_KhachHang PRIMARY KEY(MaKH)
+)
+CREATE TABLE KhuyenMai
+(
+	MaKM varchar(10) NOT NULL,
+	TenKM nvarchar(100),
+	ChietKhau float,
+	CONSTRAINT PK_KhuyenMai PRIMARY KEY(MaKM)
+)
+CREATE TABLE HoaDonNhap
+(
+	MaHDN varchar(10) NOT NULL,
+	MaNV varchar(10) NOT NULL,
+	MaHang varchar(10) NOT NULL,
+	TongTien money,
+	NgayLapHD date,
+	CONSTRAINT PK_HoaDonNhap PRIMARY KEY(MaHDN),
+	CONSTRAINT FK_HoaDonNhap_NhanVien FOREIGN KEY(MaNV) REFERENCES NhanVien(MaNV),
+	CONSTRAINT FK_HoaDonNhap_HangSX FOREIGN KEY(MaHang) REFERENCES HangSX(MaHang)
+)
+CREATE TABLE ChiTietHoaDonNhap
+(
+	MaHDN varchar(10) NOT NULL,
+	MaLoaiXe varchar(10) NOT NULL,
+	SoLuong int,
+	ThanhTien money,
+	CONSTRAINT PK_ChiTietHoaDonNhap PRIMARY KEY(MaHDN,MaLoaiXe),
+	CONSTRAINT FK_ChiTietHoaDonNhap_HoaDonNhap FOREIGN KEY(MaHDN) REFERENCES HoaDonNhap(MaHDN),
+	CONSTRAINT FK_ChiTietHoaDonNhap_LoaiXe FOREIGN KEY(MaLoaiXe) REFERENCES LoaiXe(MaLoaiXe)
+)
+CREATE TABLE HoaDonBan
+(
+	MaHD varchar(10) NOT NULL,
+	MaNV varchar(10) NOT NULL,
+	MaKH varchar(10) NOT NULL,
+	TongTien money,
+	NgayLapHD date,
+	MaKM varchar(10) NOT NULL,
+	CONSTRAINT PK_HoaDonBan PRIMARY KEY(MaHD),
+	CONSTRAINT PK_HoaDonBan_NhanVien FOREIGN KEY(MaNV) REFERENCES NhanVien(MaNV),
+	CONSTRAINT PK_HoaDonBan_KhachHang FOREIGN KEY(MaKH) REFERENCES KhachHang(MaKH),
+	CONSTRAINT PK_HoaDonBan_KhuyenMai FOREIGN KEY(MaKM) REFERENCES KhuyenMai(MaKM)
+)
+CREATE TABLE ChiTietHoaDonBan
+(
+	MaHD varchar(10) NOT NULL,
+	MaXe varchar(10) NOT NULL,
+	SoLuong int,
+	ThanhTien money,
+	CONSTRAINT PK_ChiTietHoaDonBan PRIMARY KEY(MaHDN,MaXe),
+	CONSTRAINT FK_ChiTietHoaDonBan_HoaDonBan FOREIGN KEY(MaHD) REFERENCES HoaDonBan(MaHD),
+	CONSTRAINT FK_ChiTietHoaDonBan_Xe FOREIGN KEY(MaLXe) REFERENCES Xe(MaXe)
+)
+

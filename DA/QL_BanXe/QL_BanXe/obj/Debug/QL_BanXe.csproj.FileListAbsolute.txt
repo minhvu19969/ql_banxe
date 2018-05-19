@@ -1,0 +1,13 @@
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\bin\Debug\QL_BanXe.exe.config
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.ChiTietHDB.resources
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.KhachHang.resources
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.Properties.Resources.resources
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\bin\Debug\QL_BanXe.exe
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\bin\Debug\QL_BanXe.pdb
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.exe
+C:\Users\Administrator\Desktop\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.pdb
+C:\Users\Admin\Desktop\DA\DA\QL_BanXe\QL_BanXe\bin\Debug\QL_BanXe.exe.config
+C:\Users\Admin\Desktop\DA\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.exe
+C:\Users\Admin\Desktop\DA\DA\QL_BanXe\QL_BanXe\obj\Debug\QL_BanXe.pdb
